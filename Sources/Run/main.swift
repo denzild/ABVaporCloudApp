@@ -19,8 +19,8 @@ import FluentProvider
 /// if no command is given, it will default to "serve"
 let config = try Config()
 
-let mongoConfig = config["mongodb", "server"]?.string ?? "default"
-let db = try Database(mongoConfig as! Driver)
+//let mongoConfig = config["mongodb", "server"]?.string ?? "default"
+//let db = try Database(mongoConfig as! Driver)
 
 try config.setup()
 
