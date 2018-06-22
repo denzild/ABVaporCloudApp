@@ -1,6 +1,7 @@
 import Vapor
 import AuthProvider
 
+
 extension Droplet {
     func setupRoutes() throws {
         try setupUnauthenticatedRoutes()

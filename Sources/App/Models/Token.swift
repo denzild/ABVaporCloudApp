@@ -2,6 +2,7 @@ import Vapor
 import FluentProvider
 import Crypto
 
+
 final class Token: Model {
     let storage = Storage()
 

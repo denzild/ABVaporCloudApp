@@ -1,6 +1,6 @@
 import App
 import Vapor
-
+import FluentProvider
 /// We have isolated all of our App's logic into
 /// the App module because it makes our app
 /// more testable.
@@ -18,9 +18,18 @@ import Vapor
 /// .run() runs the Droplet's commands, 
 /// if no command is given, it will default to "serve"
 let config = try Config()
+
+let mongoConfig = config["mongodb", "server"]?.string ?? "default"
+let db = try Database(mongoConfig as! Driver)
+
 try config.setup()
 
 let drop = try Droplet(config)
 try drop.setup()
 
 try drop.run()
+
+
+
+
+
